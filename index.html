@@ -15,7 +15,11 @@
             --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: var(--font-main);
@@ -27,7 +31,7 @@
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
 
-        /* --- HEADER --- */
+        /* --- HEADER & NAVIGATION --- */
         header {
             background-color: var(--primary-color);
             color: var(--text-light);
@@ -38,15 +42,38 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        .logo { font-size: 1.5rem; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .logo span { color: var(--secondary-color); }
 
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { transition: color 0.3s; font-weight: 500; }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
         .nav-links a:hover { color: var(--secondary-color); }
 
         .btn-login {
@@ -57,11 +84,18 @@
             font-weight: bold;
             cursor: pointer;
             border: none;
+            transition: all 0.3s ease;
         }
 
-        /* --- HERO --- */
+        .btn-login:hover {
+            background-color: #e76f51;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://ibb.co/0j55bNbd');
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('sgsj-building.jpg');
             background-size: cover;
             background-position: center;
             height: 80vh;
@@ -72,75 +106,276 @@
             color: var(--text-light);
         }
 
-        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin: 0 auto 2rem; }
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
 
-        .cta-buttons { display: flex; gap: 15px; justify-content: center; }
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
 
         .btn-primary {
             background-color: var(--secondary-color);
-            color: white;
+            color: var(--text-light);
             padding: 12px 30px;
             border-radius: 5px;
             font-weight: bold;
+            transition: transform 0.2s;
         }
+
+        .btn-primary:hover { transform: translateY(-2px); }
 
         .btn-outline {
-            border: 2px solid white;
-            color: white;
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
             padding: 12px 30px;
             border-radius: 5px;
             font-weight: bold;
+            transition: background 0.3s;
         }
 
-        /* --- STATS --- */
-        .stats { background: white; padding: 3rem 0; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; }
-        .stat-item h3 { font-size: 2.5rem; color: var(--primary-color); }
+        .btn-outline:hover { background-color: var(--text-light); color: var(--primary-color); }
 
-        /* --- ABOUT --- */
-        .about-section {
-            background: linear-gradient(rgba(0,51,102,0.9), rgba(0,51,102,0.8)), url('https://ibb.co/0j55bNbd,w=1200');
-            background-size: cover;
-            background-position: center;
-            padding: 6rem 0;
-            color: white;
+        /* --- STATS SECTION --- */
+        .stats {
+            background-color: white;
+            padding: 3rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
             text-align: center;
         }
 
-        .about-section h2 { color: white; margin-bottom: 2rem; }
-        .about-section p { max-width: 800px; margin: 0 auto 1.5rem; }
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
 
-        /* --- WHY JOIN --- */
-        .why-join-section { padding: 5rem 0; background: white; text-align: center; }
+        /* --- ABOUT US SECTION --- */
+        .about-section {
+            position: relative;
+            background-image: url('sgsj-building.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 6rem 0;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.9) 0%, rgba(0, 51, 102, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .about-section .section-title {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .about-text h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #f4a261;
+            font-weight: 700;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .mv-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .mv-card h4 {
+            color: #f4a261;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mv-card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* --- WHY JOIN US SECTION --- */
+        .why-join-section {
+            padding: 5rem 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .why-join-section .section-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
         .why-join-tagline {
             font-size: 1.5rem;
             color: var(--primary-color);
             font-style: italic;
             font-weight: 700;
-            margin: 2rem auto;
+            margin-bottom: 3rem;
             max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
-        .join-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
-        .join-card { background: var(--light-bg); padding: 2rem; border-radius: 10px; border-bottom: 4px solid var(--primary-color); }
-        .join-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+        .why-join-tagline::before, .why-join-tagline::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary-color);
+            opacity: 0.4;
+            position: absolute;
+            top: -20px;
+            font-weight: 300;
+        }
 
-        /* --- GALLERY (SIMPLE & WORKING) --- */
-        .gallery-section { padding: 5rem 0; background: var(--light-bg); }
-        .gallery-section h2 { text-align: center; color: var(--primary-color); margin-bottom: 1rem; }
-        .gallery-subtitle { text-align: center; color: #666; margin-bottom: 3rem; }
+        .why-join-tagline::before { left: -40px; }
+        .why-join-tagline::after { right: -40px; top: auto; bottom: -40px; }
+
+        .join-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .join-card {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border-bottom: 4px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .join-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        .join-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .join-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery-section {
+            padding: 5rem 0;
+            background-color: var(--light-bg);
+        }
+
+        .gallery-section .section-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .gallery-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 2px solid var(--primary-color);
+            background: white;
+            color: var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .gallery-item {
             position: relative;
-            border-radius: 10px;
             overflow: hidden;
+            border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             cursor: pointer;
             aspect-ratio: 4/3;
@@ -150,176 +385,511 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s;
+            transition: transform 0.5s ease;
         }
 
-        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
 
         .gallery-overlay {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 51, 102, 0.9);
-            color: white;
-            padding: 1rem;
-            transform: translateY(100%);
-            transition: transform 0.3s;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 51, 102, 0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .gallery-item:hover .gallery-overlay { transform: translateY(0); }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .gallery-overlay p {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        .gallery-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-icon {
+            opacity: 1;
+        }
 
         /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
             z-index: 2000;
             justify-content: center;
             align-items: center;
         }
-        .lightbox.active { display: flex; }
-        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
         .lightbox-close {
             position: absolute;
-            top: 20px; right: 40px;
+            top: 20px;
+            right: 40px;
             color: white;
             font-size: 3rem;
             cursor: pointer;
+            transition: color 0.3s;
         }
 
-        /* --- EVENTS --- */
-        .events-section { background: #e9ecef; padding: 4rem 0; }
-        .event-card {
-            display: flex;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        .lightbox-close:hover {
+            color: var(--secondary-color);
         }
-        .event-date {
-            background: var(--primary-color);
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
             color: white;
-            padding: 1.5rem;
-            min-width: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .event-date .day { font-size: 1.5rem; font-weight: bold; }
-        .event-details { padding: 1.5rem; }
-        .event-details h3 { color: var(--primary-color); margin-bottom: 0.5rem; }
-        .highlight { color: var(--secondary-color); font-style: italic; margin-top: 0.5rem; }
-
-        .btn-register {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 1rem;
+            text-align: center;
+            font-size: 1.2rem;
         }
 
-        /* --- FOOTER --- */
-        footer { background: var(--primary-color); color: white; padding: 3rem 0; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .footer-col h4 { color: var(--secondary-color); margin-bottom: 1rem; }
-        .footer-col a:hover { text-decoration: underline; }
-        .copyright { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .lightbox-caption h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
 
         /* --- LOGIN MODAL --- */
         .login-modal {
             display: none;
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,51,102,0.9);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 51, 102, 0.9);
             z-index: 3000;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
-        .login-modal.active { display: flex; }
+
+        .login-modal.active {
+            display: flex;
+        }
+
         .login-container {
             background: white;
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: 15px;
-            max-width: 400px;
-            width: 90%;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             position: relative;
+            animation: slideDown 0.3s ease;
         }
-        .login-close { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .login-close:hover {
+            color: var(--primary-color);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-header h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
         .login-form input {
             width: 100%;
-            padding: 12px;
-            margin: 10px 0;
+            padding: 12px 15px;
             border: 2px solid #ddd;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: var(--font-main);
         }
+
+        .login-form input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+        }
+
+        .remember-me input {
+            width: auto;
+        }
+
+        .forgot-password {
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .forgot-password:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
         .btn-submit {
             width: 100%;
             padding: 14px;
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, #004080 100%);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 1rem;
+            transition: all 0.3s ease;
         }
 
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 51, 102, 0.3);
+        }
+
+        .login-divider {
+            text-align: center;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .login-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #ddd;
+        }
+
+        .login-divider span {
+            background: white;
+            padding: 0 15px;
+            color: #666;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .login-footer a {
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .login-footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        .login-error {
+            background: #fee;
+            color: #c00;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .login-success {
+            background: #efe;
+            color: #060;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        /* --- EVENTS SECTION --- */
+        .events-section { 
+            background-color: #e9ecef; 
+            padding: 4rem 0;
+        }
+        
+        .event-card {
+            display: flex;
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .event-date {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-width: 100px;
+        }
+
+        .event-date .day { font-size: 1.5rem; font-weight: bold; }
+        .event-date .month { text-transform: uppercase; }
+
+        .event-details { padding: 1.5rem; }
+        .event-details h3 { color: var(--primary-color); margin-bottom: 0.5rem; }
+        .event-details p { margin-bottom: 0.3rem; }
+        .event-details .highlight { 
+            color: var(--secondary-color); 
+            font-weight: 500;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Registration Button */
+        .btn-register {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #e76f51 100%);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            border: 2px solid transparent;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #e76f51 0%, var(--secondary-color) 100%);
+        }
+
+        .btn-register:active {
+            transform: translateY(-1px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col ul li a:hover { text-decoration: underline; }
+        .footer-col p { color: rgba(255,255,255,0.9); }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero-content h1 { font-size: 2rem; }
             .event-card { flex-direction: column; }
-            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+            .event-date { flex-direction: row; gap: 10px; padding: 1rem; }
+            .about-section { background-attachment: scroll; }
+            .why-join-tagline::before { left: -20px; }
+            .why-join-tagline::after { right: -20px; }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+            .lightbox-close { right: 20px; font-size: 2.5rem; }
+            .why-join-tagline { font-size: 1.3rem; }
+            .login-container { padding: 2rem; }
+            .login-header h2 { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- NAVIGATION -->
     <header>
         <div class="container nav-wrapper">
-            <div class="logo">SGSJ <span>Polytechnic</span> Alumni</div>
+            <div class="logo">
+                SGSJ <span>Polytechnic</span> Alumni
+            </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#why-join">Why Join</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#events">Events</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button class="btn-login" onclick="openLogin()">🔐 Login</button>
+            <button class="btn-login" onclick="openLoginModal()">🔐 Member Login</button>
         </div>
     </header>
 
     <!-- LOGIN MODAL -->
     <div class="login-modal" id="loginModal">
         <div class="login-container">
-            <span class="login-close" onclick="closeLogin()">&times;</span>
-            <h3 style="text-align:center;color:var(--primary-color);margin-bottom:1rem;">Member Login</h3>
+            <span class="login-close" onclick="closeLoginModal()">&times;</span>
+            
+            <div class="login-header">
+                <h2>Welcome Back!</h2>
+                <p>Login to access your alumni dashboard</p>
+            </div>
+
+            <div class="login-error" id="loginError">
+                ❌ Invalid email or password. Please try again.
+            </div>
+
+            <div class="login-success" id="loginSuccess">
+                ✅ Login successful! Redirecting...
+            </div>
+
             <form class="login-form" onsubmit="handleLogin(event)">
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit" class="btn-submit">Login</button>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="alumni@sgsjpoly.edu" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="login-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember"> Remember Me
+                    </label>
+                    <a href="#" class="forgot-password" onclick="alert('Password reset link will be sent to your email')">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn-submit">Login to Dashboard</button>
             </form>
+
+            <div class="login-divider">
+                <span>OR</span>
+            </div>
+
+            <div class="login-footer">
+                <p>New to SGSJ Alumni? <a href="#" onclick="alert('Registration form will open here')">Register Now</a></p>
+                <p style="margin-top: 10px; font-size: 0.85rem;">Need help? Contact <a href="mailto:alumnisgsj@gmail.com">alumnisgsj@gmail.com</a></p>
+            </div>
         </div>
     </div>
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
         <div class="container hero-content">
             <h1>Welcome Home, Where Memories Live Forever</h1>
-            <p>Connecting the global community of SGSJ Polytechnic alumni.</p>
+            <p>Connecting the global community of SGSJ Polytechnic alumni to foster networking, mentorship, and continuous growth.</p>
             <div class="cta-buttons">
-                <a href="#gallery" class="btn-primary">View Gallery</a>
-                <a href="#events" class="btn-outline">Upcoming Events</a>
+                <a href="#why-join" class="btn-primary">Join Us</a>
+                <a href="#about" class="btn-outline">Learn More</a>
             </div>
         </div>
     </section>
@@ -327,19 +897,51 @@
     <!-- STATS -->
     <section class="stats">
         <div class="container stats-grid">
-            <div class="stat-item"><h3>15,000+</h3><p>Alumni</p></div>
-            <div class="stat-item"><h3>40+</h3><p>Years</p></div>
-            <div class="stat-item"><h3>12</h3><p>Chapters</p></div>
-            <div class="stat-item"><h3>500+</h3><p>Events</p></div>
+            <div class="stat-item">
+                <h3>15,000+</h3>
+                <p>Registered Alumni</p>
+            </div>
+            <div class="stat-item">
+                <h3>40+</h3>
+                <p>Years of Excellence</p>
+            </div>
+            <div class="stat-item">
+                <h3>12</h3>
+                <p>Global Chapters</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Annual Events</p>
+            </div>
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT US SECTION -->
     <section class="about-section" id="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>The SGSJ Polytechnic Alumni Association connects graduates worldwide to foster networking, mentorship, and growth.</p>
-            <p><strong>Mission:</strong> To connect, engage, and empower SGSJ Polytechnic alumni while supporting current students.</p>
+        <div class="about-overlay"></div>
+        <div class="container about-content">
+            <h2 class="section-title">About Us</h2>
+            
+            <div class="about-text">
+                <h3>Welcome to SGSJ Polytechnic Alumni Association</h3>
+                <p>
+                    The SGSJ Polytechnic Alumni Association is a vibrant community of graduates dedicated to maintaining lifelong connections with their alma mater and fellow alumni. Since our establishment, we have been committed to fostering professional growth, networking opportunities, and giving back to the institution that shaped our careers.
+                </p>
+                <p>
+                    Our alumni span across diverse industries and geographies, creating a powerful network of professionals who continue to uphold the values of excellence, innovation, and integrity instilled by SGSJ Polytechnic.
+                </p>
+                
+                <div class="mission-vision">
+                    <div class="mv-card">
+                        <h4>🎯 Our Mission</h4>
+                        <p>To connect, engage, and empower SGSJ Polytechnic alumni while supporting current students and contributing to the growth of our beloved institution.</p>
+                    </div>
+                    <div class="mv-card">
+                        <h4>👁️ Our Vision</h4>
+                        <p>To build a global alumni network that drives innovation, mentorship, and excellence, making SGSJ Polytechnic a beacon of technical education.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
