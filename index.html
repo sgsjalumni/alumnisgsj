@@ -321,6 +321,70 @@
             font-size: 1.5rem;
         }
 
+        /* --- OUR NETWORK SECTION --- */
+        .network-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #004080 100%);
+            color: white;
+        }
+
+        .network-section .section-title {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .network-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .network-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .network-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .network-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .network-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .network-card h3 {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .network-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.9);
+        }
+
         /* --- GALLERY SECTION --- */
         .gallery-section {
             padding: 5rem 0;
@@ -807,6 +871,7 @@
             .why-join-tagline { font-size: 1.3rem; }
             .login-container { padding: 2rem; }
             .login-header h2 { font-size: 1.5rem; }
+            .network-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -822,6 +887,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
+                    <li><a href="#network">Our Network</a></li>
                     <li><a href="#why-join">Why Join</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#events">Events</a></li>
@@ -925,7 +991,7 @@
             <div class="about-text">
                 <h3>Welcome to SGSJ Polytechnic Alumni Community</h3>
                 <p>
-                    The SGSJ Polytechnic Alumni Community is a vibrant community of graduates dedicated to maintaining lifelong connections with their alma mater and fellow alumni. Since our establishment, we have been committed to fostering professional growth, networking opportunities, and giving back to the institution that shaped our careers.
+                    The SGSJ Polytechnic Alumni is a vibrant community of graduates dedicated to maintaining lifelong connections with their alma mater and fellow alumni. Since our establishment, we have been committed to fostering professional growth, networking opportunities, and giving back to the institution that shaped our careers.
                 </p>
                 <p>
                     Our alumni span across diverse industries and geographies, creating a powerful network of professionals who continue to uphold the values of excellence, innovation, and integrity instilled by SGSJ Polytechnic.
@@ -945,10 +1011,46 @@
         </div>
     </section>
 
-    <!-- WHY JOIN -->
-    <section class="why-join-section">
+    <!-- OUR NETWORK SECTION -->
+    <section class="network-section" id="network">
         <div class="container">
-            <h2>Why Join Us?</h2>
+            <h2 class="section-title">Our Network</h2>
+            <p class="network-intro">
+                With alumni spread across diverse industries and geographical locations, SGSJ Polytechnic boasts a powerful and influential network. Our members are making significant contributions in their respective fields while continuing to uphold the core values of excellence, innovation, and integrity.
+            </p>
+            
+            <div class="network-grid">
+                <div class="network-card">
+                    <span class="network-icon">🤝</span>
+                    <h3>Professional Networking</h3>
+                    <p>Connecting alumni across industries for growth and collaboration</p>
+                </div>
+                
+                <div class="network-card">
+                    <span class="network-icon">🎓</span>
+                    <h3>Mentorship Programs</h3>
+                    <p>Guiding current students with real-world insights and career advice</p>
+                </div>
+                
+                <div class="network-card">
+                    <span class="network-icon">🌍</span>
+                    <h3>Community Engagement</h3>
+                    <p>Organizing events, alumni meets, and social initiatives</p>
+                </div>
+                
+                <div class="network-card">
+                    <span class="network-icon">🏫</span>
+                    <h3>Institutional Support</h3>
+                    <p>Contributing to the development and progress of SGSJ Polytechnic</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY JOIN -->
+    <section class="why-join-section" id="why-join">
+        <div class="container">
+            <h2 class="section-title">Why Join Us?</h2>
             <div class="why-join-tagline">
                 "To connect, grow, and give back through a strong network of trusted peers."
             </div>
@@ -966,38 +1068,37 @@
                 <div class="join-card">
                     <span class="join-icon">❤️</span>
                     <h3>Give Back</h3>
-                    <p>Guide. Support. Inspire.
-Mentor students and contribute to meaningful community initiatives.</p>
+                    <p>Guide. Support. Inspire. Mentor students and contribute to meaningful community initiatives.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- GALLERY (10 WORKING IMAGES) -->
+    <!-- GALLERY (12 WORKING IMAGES) -->
     <section class="gallery-section" id="gallery">
         <div class="container">
-            <h2>Photo Gallery</h2>
+            <h2 class="section-title">Photo Gallery</h2>
             <p class="gallery-subtitle">Alumni Meet - 2023 - Memories Captured</p>
             
             <div class="gallery-grid">
                 <!-- Image 1 -->
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://i.ibb.co/JR4NVwfv/compressed-1.jpg"Alumni meet 2023 - 1">
+                    <img src="https://i.ibb.co/JR4NVwfv/compressed-1.jpg" alt="Alumni meet 2023 - 1">
                     <div class="gallery-overlay"><h4>Alumni meet 2023 - 1</h4></div>
                 </div>
                 <!-- Image 2 -->
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://i.ibb.co/FLKkBSHB/compressed-2.jpg"Alumni meet 2023 - 2">
+                    <img src="https://i.ibb.co/FLKkBSHB/compressed-2.jpg" alt="Alumni meet 2023 - 2">
                     <div class="gallery-overlay"><h4>Alumni meet 2023 - 2</h4></div>
                 </div>
                 <!-- Image 3 -->
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://i.ibb.co/0jkZzdsv/compressed-3.jpg"Alumni meet 2023 - 3">
+                    <img src="https://i.ibb.co/0jkZzdsv/compressed-3.jpg" alt="Alumni meet 2023 - 3">
                     <div class="gallery-overlay"><h4>Alumni meet 2023 - 3</h4></div>
                 </div>
                 <!-- Image 4 -->
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://i.ibb.co/5xR8K0c3/compressed-4.jpg"Alumni meet 2023 - 4">
+                    <img src="https://i.ibb.co/5xR8K0c3/compressed-4.jpg" alt="Alumni meet 2023 - 4">
                     <div class="gallery-overlay"><h4>Alumni meet 2023 - 4</h4></div>
                 </div>
                 <!-- Image 5 -->
@@ -1032,7 +1133,7 @@ Mentor students and contribute to meaningful community initiatives.</p>
                 </div>
                 <!-- Image 11 -->
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="https://i.ibb.co/MyKmK7fj/compressed-11.jpg" alt=Alumni meet 2023 - 11">
+                    <img src="https://i.ibb.co/MyKmK7fj/compressed-11.jpg" alt="Alumni meet 2023 - 11">
                     <div class="gallery-overlay"><h4>Alumni meet 2023 - 11</h4></div>
                 </div>
                 <!-- Image 12 -->
@@ -1091,9 +1192,19 @@ Mentor students and contribute to meaningful community initiatives.</p>
         });
 
         // Login Modal
-        function openLogin() { document.getElementById('loginModal').classList.add('active'); }
-        function closeLogin() { document.getElementById('loginModal').classList.remove('active'); }
-        function handleLogin(e) { e.preventDefault(); alert('Login demo - in production this connects to backend'); closeLogin(); }
+        function openLoginModal() { 
+            document.getElementById('loginModal').classList.add('active'); 
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLoginModal() { 
+            document.getElementById('loginModal').classList.remove('active'); 
+            document.body.style.overflow = 'auto';
+        }
+        function handleLogin(e) { 
+            e.preventDefault(); 
+            alert('Login demo - in production this connects to backend'); 
+            closeLoginModal(); 
+        }
 
         // Lightbox
         function openLightbox(el) {
@@ -1105,7 +1216,12 @@ Mentor students and contribute to meaningful community initiatives.</p>
             document.getElementById('lightbox').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
-        document.onkeydown = e => { if(e.key==='Escape') closeLightbox(); }
+        document.onkeydown = e => { if(e.key==='Escape') { closeLightbox(); closeLoginModal(); } }
+        
+        // Close modal when clicking outside
+        document.getElementById('loginModal').addEventListener('click', function(e) {
+            if (e.target === this) closeLoginModal();
+        });
     </script>
 </body>
 </html>
